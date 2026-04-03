@@ -1,1 +1,20 @@
-
+title: Suspicious Encoded PowerShell Execution
+id: 2c7a5b91-2222-5555-9999-encodedpowershell
+status: experimental
+description: Detects PowerShell execution using encoded commands or Base64 decoding patterns.
+author: Oluwakemi Bankole
+date: 2026-04-03
+logsource:
+  product: windows
+  service: powershell
+detection:
+  keywords:
+    - "-enc"
+    - "FromBase64String"
+  condition: keywords
+level: high
+tags:
+  - attack.execution
+  - attack.t1059.001
+  - attack.defense_evasion
+  - attack.t1027
