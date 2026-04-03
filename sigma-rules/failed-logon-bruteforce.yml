@@ -1,1 +1,17 @@
-
+title: Failed Logon Brute Force Detection
+id: 9b7d6f21-1111-4444-8888-failedlogon4625
+status: experimental
+description: Detects repeated failed logon activity that may indicate brute-force attempts.
+author: Oluwakemi Bankole
+date: 2026-04-03
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625
+  condition: selection
+level: medium
+tags:
+  - attack.credential_access
+  - attack.t1110
