@@ -1,1 +1,2 @@
-
+index=wineventlog EventCode=4104
+| search "-enc" OR "FromBase64String"
